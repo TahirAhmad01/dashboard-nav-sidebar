@@ -7,7 +7,7 @@ export default function Layout() {
 
   return (
     <>
-      <div className="bg-gray-300 h-screen overflow-hidden flex">
+      <div className="bg-gray-300 h-screen overflow-hidden flex relative">
         <Sidebar isOpen={isSidebarOpen} />
 
         <div className="w-full overflow-x-auto">
