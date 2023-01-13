@@ -8,7 +8,9 @@ export default function Sidebar({ isOpen }) {
           isOpen ? "w-80" : "w-20"
         } hidden md:block`}
       >
-        <div className="logo text-3xl h-16 bg-gray-50">Qubartech</div>
+        <div className="logo text-3xl h-16 bg-gray-50 flex items-center px-4">
+          {isOpen ? "Qubartech" : "Q"}
+        </div>
         <div className="overflow-x-auto h-[calc(100%-3.5rem)]">
           <div>ghgh</div>
           <div>ghgh</div>

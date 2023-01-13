@@ -2,9 +2,10 @@ import Layout from "./components/layout";
 
 function App() {
   return (
-    <div className="App">
-      <Layout />
-    </div>
+    <Layout>
+      <div>hi how are you</div>
+      <div className="flex items-center justify-center">center</div>
+    </Layout>
   );
 }
 

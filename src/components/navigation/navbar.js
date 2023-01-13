@@ -1,5 +1,4 @@
 import React from "react";
-import LeftDrawer from './leftDrawer';
 
 export default function Navbar({ setSidebar, isOpen }) {
   const toggleSidebar = () => {
@@ -8,9 +7,10 @@ export default function Navbar({ setSidebar, isOpen }) {
 
   return (
     <>
-      <div className="h-16 bg-neutral-200 w-full ">
-        <button onClick={toggleSidebar}>Sidebar toggle</button>
-        <LeftDrawer isOpen={isOpen} setSidebar={setSidebar}/>
+      <div className="h-16 bg-neutral-200 w-full flex items-center px-7">
+        <button onClick={toggleSidebar} className="hover:text-gray-900">
+          <box-icon name="menu-alt-left" size="30px" className="text-gray-300"></box-icon>
+        </button>
       </div>
     </>
   );

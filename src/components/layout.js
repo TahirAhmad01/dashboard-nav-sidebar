@@ -1,9 +1,12 @@
 import React, { useState } from "react";
+import useWindowDimensions from "./../hook/getWindowDimensions";
+import LeftDrawer from "./navigation/leftDrawer";
 import Navbar from "./navigation/navbar";
 import Sidebar from "./navigation/sidebar";
 
-export default function Layout() {
-  const [isSidebarOpen, setSidebarOpen] = useState(true);
+export default function Layout({ children }) {
+  const { width } = useWindowDimensions();
+  const [isSidebarOpen, setSidebarOpen] = useState(width > 768);
 
   return (
     <>
@@ -12,8 +15,8 @@ export default function Layout() {
 
         <div className="w-full overflow-x-auto">
           <Navbar setSidebar={setSidebarOpen} isOpen={isSidebarOpen} />
-          <div>hi how are you</div>
-          <div className="flex items-center justify-center">center</div>
+          <LeftDrawer setSidebar={setSidebarOpen} isOpen={isSidebarOpen} />
+          {children}
         </div>
       </div>
     </>
