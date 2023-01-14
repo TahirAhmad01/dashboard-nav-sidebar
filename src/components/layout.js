@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import useWindowDimensions from "./../hook/getWindowDimensions";
-import LeftDrawer from "./navigation/leftDrawer";
+import Modal from "./navigation/modal";
 import Navbar from "./navigation/navbar";
 import Sidebar from "./navigation/sidebar";
 
@@ -15,7 +15,8 @@ export default function Layout({ children }) {
 
         <div className="w-full overflow-x-auto">
           <Navbar setSidebar={setSidebarOpen} isOpen={isSidebarOpen} />
-          <LeftDrawer setSidebar={setSidebarOpen} isOpen={isSidebarOpen} />
+          {/* <LeftDrawer setSidebar={setSidebarOpen} isOpen={isSidebarOpen} /> */}
+          <Modal setSidebar={setSidebarOpen} isOpen={isSidebarOpen} />
           {children}
         </div>
       </div>
