@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Navbar({ setSidebar, isOpen }) {
+export default function Navbar({ setSidebar, isOpen, theme, toggleTheme }) {
   const toggleSidebar = () => {
     setSidebar(!isOpen);
   };

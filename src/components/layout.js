@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import useWindowDimensions from "./../hook/getWindowDimensions";
-import Modal from "./navigation/modal";
+import LeftDrawer from "./navigation/leftDrawer";
 import Navbar from "./navigation/navbar";
 import Sidebar from "./navigation/sidebar";
 
-export default function Layout({ children }) {
+export default function Layout({ children, theme, toggleTheme }) {
   const { width } = useWindowDimensions();
   const [isSidebarOpen, setSidebarOpen] = useState(width > 768);
 
@@ -16,7 +16,12 @@ export default function Layout({ children }) {
         <div className="w-full overflow-x-auto">
           <Navbar setSidebar={setSidebarOpen} isOpen={isSidebarOpen} />
           {/* <LeftDrawer setSidebar={setSidebarOpen} isOpen={isSidebarOpen} /> */}
-          <Modal setSidebar={setSidebarOpen} isOpen={isSidebarOpen} />
+          <LeftDrawer
+            setSidebar={setSidebarOpen}
+            isOpen={isSidebarOpen}
+            theme={theme}
+            toggleTheme={toggleTheme}
+          />
           {children}
         </div>
       </div>
